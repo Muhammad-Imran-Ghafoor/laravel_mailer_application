@@ -14,5 +14,6 @@ class ProductController extends Controller
             'prduct_name' => $request->p_name,
             'user_email' => $request->email,
         ]);
+        
     }
 }
