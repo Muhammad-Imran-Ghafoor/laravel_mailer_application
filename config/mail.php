@@ -71,7 +71,7 @@ return [
             'transport' => 'array',
         ],
     ],
-
+    'from' => env('MAIL_FROM_ADDRESS'),
     /*
     |--------------------------------------------------------------------------
     | Global "From" Address

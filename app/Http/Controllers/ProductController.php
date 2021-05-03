@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\Product;
-use GuzzleHttp\Promise\Create;
+use App\Mail\ProductAdded;
 use Illuminate\Http\Request;
+use GuzzleHttp\Promise\Create;
+use Illuminate\Support\Facades\Mail;
 
 class ProductController extends Controller
 {
@@ -14,6 +16,7 @@ class ProductController extends Controller
             'prduct_name' => $request->p_name,
             'user_email' => $request->email,
         ]);
+        Mail::to($request->email)->send(new ProductAdded());
         
     }
 }
