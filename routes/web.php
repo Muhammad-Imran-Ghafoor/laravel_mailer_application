@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PDFGenContoller;
 use App\Http\Controllers\ProductController;
 /*
 |--------------------------------------------------------------------------
@@ -17,3 +18,5 @@ Route::get('/', function () {
     return view('add_product');
 });
 Route::post('/product', [ProductController::class , 'index']);
+Route::get('/gen_pdf', PDFGenContoller::class);
+
